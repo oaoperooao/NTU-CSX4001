@@ -15,6 +15,6 @@
 	- e-1.閱讀例題、分析並完成		|| Read practices,analyze the code and finish it
 ### 未完成 unfinished
 - e-2.完成習題	|| Accomplish homework tasks
-		- e-2a 基礎習題||Basic
-		- e-2b 猜數字	||Guess Numbers
+	- e-2a 基礎習題||Basic
+	- e-2b 猜數字	||Guess Numbers
 	
