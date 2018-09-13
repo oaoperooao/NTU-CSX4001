@@ -16,5 +16,5 @@
 	- e-2.完成習題	|| Accomplish homework tasks
 		- e-2a 基礎習題||Basic tasks
 ### 未完成 unfinished
--	- e-2b 猜數字	||Guess Numbers
+		- e-2b 猜數字	||Guess Numbers
 	
