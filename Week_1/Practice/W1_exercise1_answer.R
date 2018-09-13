@@ -17,22 +17,22 @@ my.height.cm <-174.5
   # Reference: http://www.tpech.gov.taipei/ct.asp?xItem=1794336&CtNode=30678&mp=109171
   if (my.bmi >= 35) {
     print(paste("Your bmi: ", my.bmi))
-    print("­««×ªÎ­D!")
+    print("é‡åº¦è‚¥èƒ–!")
   } else if (my.bmi >= 30) {
     print(paste("Your bmi: ", my.bmi))
-    print("¤¤«×ªÎ­D!")
+    print("ä¸­åº¦è‚¥èƒ–!")
   } else if (my.bmi >= 27) {
     print(paste("Your bmi: ", my.bmi))
-    print("»´«×ªÎ­D!")
+    print("è¼•åº¦è‚¥èƒ–!")
   } else if (my.bmi >= 24) {
     print(paste("Your bmi: ", my.bmi))
-    print("¹L­«!")
+    print("éé‡!")
   } else if (my.bmi >= 18.5) {
     print(paste("Your bmi: ", my.bmi))
-    print("¥¿±`½d³ò")
+    print("æ­£å¸¸ç¯„åœ")
   } else {
     print(paste("Your bmi: ", my.bmi))
-    print("¹L»´!")
+    print("éè¼•!")
   }
   
   
