@@ -4,12 +4,12 @@
 
 ## 第一周Week 1(9/13)
 ### 已完成 finished
-- a. 下載R語言              Download R
-- b. 下載Rstudio            Download Rstudio
-- c. 下載Git                Download Git
-- d. 設立Github             set up Github
-	- d-1.註冊帳號                    register account
-	- d-2.建立本課程專用Repository     set up repository
-	- d-3.建立week_1資料夾             add folder week_1
+- a. 下載R語言             | Download R
+- b. 下載Rstudio           | Download Rstudio
+- c. 下載Git               | Download Git
+- d. 設立Github            | Set up Github
+	- d-1.註冊帳號                   | Register account
+	- d-2.建立本課程專用Repository    | Set up repository
+	- d-3.建立week_1資料夾            | Add folder week_1
 ### 未完成 unfinished
-- e.於該資料夾中，上傳本周練習的成果檔案(ex: hw_1_answers.R)
+- e.上傳本周練習成果		| upload exercise	
