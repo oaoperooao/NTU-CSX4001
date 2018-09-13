@@ -1,6 +1,6 @@
 # NTU-CSX4001
-你好，這裡是台大圖資系洪培洛修習資訊科學程式設計課程的作業區
-Hello! I am a student of NTU LIS,and this is my homework and projects for the course CSX4001:Data Science Programming.
+- 你好，這裡是台大圖資系洪培洛修習資訊科學程式設計課程的作業區。
+- Hello! I am a student of NTU LIS,and this is my homework and projects for the course CSX4001:Data Science Programming.
 
 ## 第一周Week 1(9/13)
 ### 已完成 finished
