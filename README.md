@@ -11,5 +11,7 @@
 	- d-1.註冊帳號                   || Register account
 	- d-2.建立本課程專用Repository    || Set up repository
 	- d-3.建立week_1資料夾            || Add folder week_1
+- e.上傳本周練習成果		|| upload exercise
+	- e-1.閱讀例題並完成		
 ### 未完成 unfinished
-- e.上傳本周練習成果		|| upload exercise	
+	
