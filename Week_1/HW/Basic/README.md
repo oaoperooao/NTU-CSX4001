@@ -1,4 +1,3 @@
-### 基礎習題||Basic tasks
  - 作業一： iris 資料庫||task1: iris
       - W1_HW_basic_task1.R
  - 作業二： 九九乘法表 ||task2: 9x9 multiplication table
