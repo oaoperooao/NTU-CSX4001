@@ -10,6 +10,6 @@
 - d. 設立Github             set up Github
 	- d-1.註冊帳號                    register account
 	- d-2.建立本課程專用Repository     set up repository
-### 未完成 unfinished
 	- d-3.建立week_1資料夾             add folder week_1
+### 未完成 unfinished
 - e.於該資料夾中，上傳本周練習的成果檔案(ex: hw_1_answers.R)
