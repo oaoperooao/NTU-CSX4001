@@ -6,3 +6,4 @@
     - W1_practice2.R
     - W1_practice3.R
 ## 習題||HW
+    - W1_GuessNumbers_v1.R
