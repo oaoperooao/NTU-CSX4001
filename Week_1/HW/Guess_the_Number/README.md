@@ -7,3 +7,6 @@
 - W1_GuessNumbers_v3.R
      - *增加計數器*
      - *Added counter of guessing times*
+- W1_GuessNumbers_r_v1.R
+     - *簡化與排版*
+     - *Simplifying and modifying codes*
