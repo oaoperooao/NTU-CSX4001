@@ -1,8 +1,8 @@
-# �q�Ʀr�C��
-# �򥻥\��
-# 1. �мg�@�ӥ�"�q���H������"���P�Ʀr���|���(1A2B�C��)
-# 2. ���a�i"����"�q�q���Ҳ��ͪ��Ʀr�A�ô��ܲq�������G(EX:1A2B)
-# 3. �@���q��A�t�Υi�۰ʭp�⪱�a�q��������
+# 猜數字遊戲
+# 基本功能
+# 1. 請寫一個由"電腦隨機產生"不同數字的四位數(1A2B遊戲)
+# 2. 玩家可"重覆"猜電腦所產生的數字，並提示猜測的結果(EX:1A2B)
+# 3. 一旦猜對，系統可自動計算玩家猜測的次數
 cor.num <- as.character(sample(x=c(0:9),size = 4))
 error  <- 0
 A <- 0
@@ -40,13 +40,13 @@ while(A!=4){
   A <- 0
   B <- 0
 
-  # �T�{A���ƶq
+  # 確認A的數量
   for (i in c(1:4)) {
     if(cp.table[i, 1] == cp.table[i, 2])  A <- A+1
   }
   count<- 0
   
-  # �T�{A+B���ƶq
+  # 確認A+B的數量
   for(i in cor.num){
     for(j in orinum){
       if (i == j)        count<- count+1
