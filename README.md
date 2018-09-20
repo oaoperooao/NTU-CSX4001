@@ -1,4 +1,4 @@
-# NTU-CSX4001
+﻿# NTU-CSX4001
 ## 第一周Week 1(9/13)
 - a. 下載R語言             || Download R
 - b. 下載Rstudio           || Download Rstudio
@@ -15,7 +15,7 @@
 ## 第二周Week 2(9/20)
 ### 已完成 finished
 ### 未完成 unfinished
-
+- a.爬蟲練習
 
 ## ==我的規則||My rules==
  - a. 練習習題與作業，不更新舊檔，而是開新檔，方便比對。|| Practices and HWs will not be updated but be uploaded as new files for easier comparison.
