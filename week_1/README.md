@@ -1,10 +1,10 @@
-# 第一周 Week 1
+﻿# 第一周 Week 1
 
-## 例題||practice
+## 例題||Course_1
     - W1_practice1.R
     - W1_practice2.R
     - W1_practice3.R
-## 習題||HW
+## 習題||hw_1
       - 基礎習題||Basic
             - W1_HW_basic_task1.R
             - W1_HW_basic_task2.R
