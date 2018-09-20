@@ -12,7 +12,8 @@ my.height.cm <-174.5
   
   # Create my.bmi with BMI(Body Mass Index) formula
   my.bmi <- my.weight.kg/(my.height.m)^2
-  my.bmi <- my.bmi %% 0.01
+  # 取至小數點後兩位
+  my.bmi <- my.bmi - my.bmi %% 0.01
   # Use if-else to print matched information
   # Reference: http://www.tpech.gov.taipei/ct.asp?xItem=1794336&CtNode=30678&mp=109171
   if (my.bmi >= 35) {
