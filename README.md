@@ -23,3 +23,5 @@
  - c. 歡迎各位指教並指出我的錯誤。||Any suggestions and debugging is welcomed.
  - d. 歡迎參考我的程式碼截長補短。	||It is welcomed to view my codes as examples to learn and avoid same mistakes I made.
  - e. 謝謝各位願意讀完這些 ^w^	||Thank you for reading these words ^w^
+
+test
