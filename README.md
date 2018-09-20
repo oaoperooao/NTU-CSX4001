@@ -15,7 +15,10 @@
 ## 第二周Week 2(9/20)
 ### 已完成 finished
 ### 未完成 unfinished
-- a.爬蟲練習
+- 0.熟悉Github Desktop		||get acquainted to Github Desktop
+- a.閱讀例題、分析並完成	||Read practices,analyze the code and finish it
+- b.爬蟲練習			||Web Crawling practice
+- c.OOXX遊戲			||Tic Tac Toe
 
 ## ==我的規則||My rules==
  - a. 練習習題與作業，不更新舊檔，而是開新檔，方便比對。|| Practices and HWs will not be updated but be uploaded as new files for easier comparison.
@@ -23,5 +26,3 @@
  - c. 歡迎各位指教並指出我的錯誤。||Any suggestions and debugging is welcomed.
  - d. 歡迎參考我的程式碼截長補短。	||It is welcomed to view my codes as examples to learn and avoid same mistakes I made.
  - e. 謝謝各位願意讀完這些 ^w^	||Thank you for reading these words ^w^
-
-test
