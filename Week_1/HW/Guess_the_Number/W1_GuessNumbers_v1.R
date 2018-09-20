@@ -6,16 +6,18 @@
 cor.num <- sample(x=c(0:9),size = 4)
 error  <- 0
 A <- 0
+c.ter<- 0
 while(A!=4){
   error <- 0
   while(error!=4){
     error <- 0
-    print("請輸入一個數字皆不同的四位數：")
-    orinum <- scan()
+    print("Input a four-letter number:")
+    orinum <- scan("")
     while(orinum > 9876||orinum<=0){
       print("Invalid Input.Please go back.")
-      print("請輸入一個數字皆不同四位數：")
-      orinum <- scan()
+      print("Input a four-letter number:")
+      orinum <- scan("")
+
     }
     ans <- orinum
   
@@ -68,7 +70,10 @@ while(A!=4){
 #  A+B-A
   B <- B-A
   if(A!=4)  print(paste(A,"A",B,"B"))
+  c.ter<- c.ter+1
 }
   print("YAY! YOU WON!!")
   print(paste("The answer is ",ans))
-
+  print(paste("You guessed",c.ter,"times."))
+  
+  
