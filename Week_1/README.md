@@ -2,7 +2,6 @@
 
 ## 例題||practice
     - W1_practice1.R
-    - W1_practice1_r.R
     - W1_practice2.R
     - W1_practice3.R
 ## 習題||HW
@@ -13,6 +12,4 @@
             - W1_HW_basic_task3.R 
 
       - 猜數字||Guess Numbers
-            - W1_GuessNumbers_v1.R
-            - W1_GuessNumbers_v2.R
-            - W1_GuessNumbers_v3.R
+            - W1_GuessNumbers.R
