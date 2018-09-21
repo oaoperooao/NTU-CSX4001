@@ -15,8 +15,8 @@
 			- *9/22 00:33 update:Guess Numbers input length filter updated*
 ## 第二周Week 2(9/20)
 ### 已完成 finished
-### 未完成 unfinished
 - 0.熟悉Github Desktop		||get acquainted to Github Desktop
+### 未完成 unfinished
 - a.閱讀例題、分析並完成	||Read practices,analyze the code and finish it
 - b.爬蟲練習			||Web Crawling practice
 - c.OOXX遊戲			||Tic Tac Toe
