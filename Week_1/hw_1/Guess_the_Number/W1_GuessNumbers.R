@@ -14,18 +14,20 @@ while(A!=4){
   while(error!=4){
     error <- 0
     orinum <- readline("Input a four-letter number:")
-    orinum <- substring(orinum, 1:4, 1:4)
+    orinumX <- substring(orinum, 1:4, 1:4)
+    orinum <- substring(orinum, 1:9, 1:9)
     
-    while(orinum > 9876||orinum<=0){
+    while(orinum > 9876||orinum<=0||orinum[5]!=""){
       print("Invalid Input.Please go back.")
       orinum <- readline("Input a four-letter number:")
-      orinum <- substring(orinum, 1:4, 1:4)
+      orinumX <- substring(orinum,1:4, 1:4)
+      orinum <- substring(orinum, 1:9, 1:9)
     }
     
-    ans <- orinum
+    ans <- orinumX
     
-    for(i in orinum){
-      for(j in orinum){
+    for(i in orinumX){
+      for(j in orinumX){
         if (i == j){
           error<- error+1
         }
@@ -35,11 +37,10 @@ while(A!=4){
     if(error!=4)  print("Invalid Input.Please go back.")
   }
 
-  cp.table <- data.frame (cor.num,orinum)
+  cp.table <- data.frame (cor.num,orinumX)
   cp.table
   A <- 0
   B <- 0
-
   # 確認A的數量
   for (i in c(1:4)) {
     if(cp.table[i, 1] == cp.table[i, 2])  A <- A+1
@@ -48,7 +49,7 @@ while(A!=4){
   
   # 確認A+B的數量
   for(i in cor.num){
-    for(j in orinum){
+    for(j in orinumX){
       if (i == j)        count<- count+1
     }
     if (count != 0){
