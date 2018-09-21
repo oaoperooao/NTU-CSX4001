@@ -12,7 +12,7 @@
 	- e-2.完成習題	|| Accomplish homework tasks
 		- e-2a 基礎習題||Basic tasks
 		- e-2b 猜數字	||Guess Numbers
-		*9/22 00:33 update:Guess Numbers input length filter updated*
+			- *9/22 00:33 update:Guess Numbers input length filter updated*
 ## 第二周Week 2(9/20)
 ### 已完成 finished
 ### 未完成 unfinished
