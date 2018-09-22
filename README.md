@@ -1,4 +1,4 @@
-﻿# NTU-CSX4001
+﻿# NTU-CSX4001 Semester107-1
 ## 第一周Week 1(9/13)
 - a. 下載R語言             || Download R
 - b. 下載Rstudio           || Download Rstudio
