@@ -1,7 +1,7 @@
 ### practice_2
 ### dataframe practice - II
 
-### GetBmi ½Ğ½Æ»s±z©ópractice_1.Rªºfunction GetBmi
+### GetBmi è«‹è¤‡è£½æ‚¨æ–¼practice_1.Rçš„function GetBmi
 GetBmi <- function (my.height.cm, my.weight.kg){
   
   # Create my.height.m by my.height.cm 
@@ -14,92 +14,96 @@ GetBmi <- function (my.height.cm, my.weight.kg){
   return (my.bmi)
 }
 
-### Part I - Åª¨ú¸ê®Æ»P¬d¬İ¸ê®Æ®Ø¤º®e ##############################################
-# ¨Ï¥Îread.table()Åª¨útest_data.csv
-# ½Ğª`·Nsep, headerªº¥Î³~, ¥H¤ÎstringsAsFactors = Fªº¼vÅT
-df <- read.table('test_data.csv', sep = ",", header = "", stringsAsFactors = F)
+### Part I - è®€å–è³‡æ–™èˆ‡æŸ¥çœ‹è³‡æ–™æ¡†å…§å®¹ ##############################################
+# ä½¿ç”¨read.table()è®€å–test_data.csv
+# è«‹æ³¨æ„sep, headerçš„ç”¨é€”, ä»¥åŠstringsAsFactors = Fçš„å½±éŸ¿
+df <- read.table('test_data.csv', sep = ",", header = TRUE, stringsAsFactors = F)
+#header=TRUEæ™‚ï¼Œæ™‚ï¼Œç¬¬ä¸€åˆ—æœƒæˆç‚ºæ¨™é¡Œï¼Œåä¹‹å‰‡ä¸æœƒ
 
-# ¨Ï¥Îdim()¬d¬İdfªººû«×(¦C¼Æ»PÄæ¼Æ)
+# ä½¿ç”¨dim()æŸ¥çœ‹dfçš„ç¶­åº¦(åˆ—æ•¸èˆ‡æ¬„æ•¸)
+dim(df)
 
+# ä½¿ç”¨head()æŸ¥çœ‹dfå‰6ç­†è³‡æ–™
+head(df)
+#headé è¨­å…­åˆ—ï¼Œæ›´æ”¹è¦head(è³‡æ–™,è¡Œæ•¸)e.g.head(df,3)
 
-# ¨Ï¥Îhead()¬d¬İdf«e6µ§¸ê®Æ
+# ä½¿ç”¨tail()æŸ¥çœ‹dfå¾Œ6ç­†è³‡æ–™
+tail(df)
+#åŒç†head
 
+# ä½¿ç”¨summary()æŸ¥çœ‹dfçš„æè¿°æ€§çµ±è¨ˆ
+summary(df)
 
-# ¨Ï¥Îtail()¬d¬İdf«á6µ§¸ê®Æ
-
-
-# ¨Ï¥Îsummary()¬d¬İdfªº´y­z©Ê²Î­p
-
-
-# ¨Ï¥Îstr()¬d¬İdfªº¸Ô²Ó¸ê°T
+# ä½¿ç”¨str()æŸ¥çœ‹dfçš„è©³ç´°è³‡è¨Š
 str(df)
+#stringsAsFactors = Tæ™‚ï¼Œæœƒå°‡å­—ä¸²è½‰ç‚ºå°æ‡‰factorï¼Œä»¥æ•¸å­—ä»£è¡¨ç›¸åŒfactorçš„è³‡æ–™,factorå¤§å°ï¼Œç”±è‹±æ–‡å­—æ¯é †åºå’Œæ•¸å­—å¤§å°æ’åˆ—ã€‚
 
-# ±Ndf$School»Pdf$SexÂà¬°factor«¬ºA
+# å°‡df$Schoolèˆ‡df$Sexè½‰ç‚ºfactorå‹æ…‹
 df$School <- as.factor(df$sex)
 df$Sex <- as.factor(df$sex)
 
-### Part II - ¸ê®Æ®Ø¾ã²z§Ş¥©I #######################################################
-# ½Ğª`·Nvector¯S©Ê¡G
-# ¦V¶qª«¥ó¥u¯à±µ¨ü¤@ºØÃş§O¡A­Yµ¹©w¦hºØÃş§O·|¨Ì[¦r¦ê>¼Æ­È>¥¬ªL]¶i¦æ¦Û°ÊÂà´«
-# ³o¨Ï±okobe¸ê®Æ¤ºªº«¬ºA³£³QÂà¦s¬°chr¤F
+### Part II - è³‡æ–™æ¡†æ•´ç†æŠ€å·§I #######################################################
+# è«‹æ³¨æ„vectorç‰¹æ€§ï¼š
+# å‘é‡ç‰©ä»¶åªèƒ½æ¥å—ä¸€ç¨®é¡åˆ¥ï¼Œè‹¥çµ¦å®šå¤šç¨®é¡åˆ¥æœƒä¾[å­—ä¸²>æ•¸å€¼>å¸ƒæ—]é€²è¡Œè‡ªå‹•è½‰æ›
+# é€™ä½¿å¾—kobeè³‡æ–™å…§çš„å‹æ…‹éƒ½è¢«è½‰å­˜ç‚ºchräº†
 Height <- c(179, 165, 158, 165, 172, 170, 168, 163, 169, 155)
 Weight <- c(69, 62, 46, 50, 72, 70, 52, 49, 63, 49)
 Kobe <- c("Kobe", "A", "M", NA, 39, 198, 96)
 
-# ¨Ï¥Îcbind()¡A·s¼WHeight»PWeight¦Üdf¬°Äæ(column)¸ê®Æ
-df <- cbind(__, ______, ______)
+# ä½¿ç”¨cbind()ï¼Œæ–°å¢Heightèˆ‡Weightè‡³dfç‚ºæ¬„(column)è³‡æ–™
+df <- cbind(df,Height, Weight)
 
-# ¨Ï¥Îrbind()¡A·s¼Wkobe¦Üdf¬°¦C(row)¸ê®Æ
-df <- rbind(__, ____)
+# ä½¿ç”¨rbind()ï¼Œæ–°å¢Kobeè‡³dfç‚ºåˆ—(row)è³‡æ–™
+df <- rbind(df, Kobe)
 
-# ­«·s¨Ï¥Îstr()ÀË¬d¤@¦¸dfªºµ²ºc®É...
-# Age, Grade, Height, Weight³£ÅÜ¦¨chr«¬ºA¤F?? <- ³Qkobe¸ê®Æ
-str(__)
+# é‡æ–°ä½¿ç”¨str()æª¢æŸ¥ä¸€æ¬¡dfçš„çµæ§‹æ™‚...
+# Age, Grade, Height, Weightéƒ½è®Šæˆchrå‹æ…‹äº†?? <- è¢«kobeè³‡æ–™
+str(df)
 
-# kobeªºGrade¸ê®Æ¥X²{¤FNA­È¡A½Ğ±N¨ä­«·s³]©w¬°990¤À¡C
-df$Grade[__] <- ___
+# kobeçš„Gradeè³‡æ–™å‡ºç¾äº†NAå€¼ï¼Œè«‹å°‡å…¶é‡æ–°è¨­å®šç‚º990åˆ†ã€‚
+df$Grade[11] <- 990
 
-# Âà´«dfÄæ¦ìªº¸ê®Æ«¬ºA # Grade: integer, Age, Height, Weight: numeric
-df$Grade <- as._______(df$Grade)
-df$Age <- as._______(df$Age)
-df$Height <- as._______(df$Height)
-df$Weight <- as._______(df$Weight)
+# è½‰æ›dfæ¬„ä½çš„è³‡æ–™å‹æ…‹ # Grade: integer, Age, Height, Weight: numeric
+df$Grade <- as.integer(df$Grade)
+df$Age <- as.numeric(df$Age)
+df$Height <- as.numeric(df$Height)
+df$Weight <- as.numeric(df$Weight)
 
-# ¬d¬İdfµ²ºc¡A¬O§_¬OÂà´«§¹²¦µ²ªG
-str(__)
+# æŸ¥çœ‹dfçµæ§‹ï¼Œæ˜¯å¦æ˜¯è½‰æ›å®Œç•¢çµæœ
+str(df)
 
-# ¨Ï¥Îorder()¡A¥Hdf$Grade±Ndf»¼´î±Æ§Ç
-df <- df[order(________, decreasing = _), ]
+# ä½¿ç”¨order()ï¼Œä»¥df$Gradeå°‡dféæ¸›æ’åº
+df <- df[order(df$Grade, decreasing = T), ]
 
-# ¨Ï¥Îsubset()¡A§R°£df$AgeÄæ¦ì(¥t¤@ºØ¤è¦¡df$Age <- NULL)
-df <- subset(df, select = c(-___))
+# ä½¿ç”¨subset()ï¼Œåˆªé™¤df$Ageæ¬„ä½(å¦ä¸€ç¨®æ–¹å¼df$Age <- NULL)
+df <- subset(df, select = c(-Age))
 
-# ¨Ï¥Înames()¡A­«·s±NGradeÄæ¦ì©R¦W¬°ToeicGrade
-names(df)[_] <- "ToeicGrade"
+# ä½¿ç”¨names()ï¼Œé‡æ–°å°‡Gradeæ¬„ä½å‘½åç‚ºToeicGrade
+names(df)[4] <- "ToeicGrade"
 
-# ¨Ï¥Îsubset()¡A¿z¿ï¥XToeicGrade¤j©ó900¨Ã¥B¨­°ª¤j©ó170ªº¤H
-# ¥BÄæ¦ì¥u»İ­nName, ToeicGrade»PHeight
-subset(df, Height > ___ & ToeicGrade > ___, select = c(____, _________, ______))
+# ä½¿ç”¨subset()ï¼Œç¯©é¸å‡ºToeicGradeå¤§æ–¼900ä¸¦ä¸”èº«é«˜å¤§æ–¼170çš„äºº
+# ä¸”æ¬„ä½åªéœ€è¦Name, ToeicGradeèˆ‡Height
+subset(df, Height > 170 & ToeicGrade > 900, select = c(Name, ToeicGrade, Height))
 
-# ¤£¨Ï¥Îsubset()¡A¿z¿ï¥Xdf¤¤School Aªº¤H¡C
-df[df$School == ___, ]
+# ä¸ä½¿ç”¨subset()ï¼Œç¯©é¸å‡ºdfä¸­School Açš„äººã€‚
+df[df$School == "A", ]
 
-### Part III - ¸ê®Æ®Ø¾ã²z§Ş¥©II #####################################################
+### Part III - è³‡æ–™æ¡†æ•´ç†æŠ€å·§II #####################################################
 df.sport <- data.frame(Name = c("Ali", "Petty", "Kobe"), FavSport = c("basketball", "baseball", "baseketball"))
 
-# ¨Ï¥Îcut()¡A¦bdf¤¤·s¼W¤@­ÓToeicLevelÄæ¦ì¡A¤º®e¬°dfªºToeicGrade¤ÀÃş«áµ²ªG
-# ¤ÀÃşbreaks¬°c(0, 600, 700, 800, 900, Inf)
-# ¤ÀÃşlabels¬°c("E", "D", "C", "B", "A")
+# ä½¿ç”¨cut()ï¼Œåœ¨dfä¸­æ–°å¢ä¸€å€‹ToeicLevelæ¬„ä½ï¼Œå…§å®¹ç‚ºdfçš„ToeicGradeåˆ†é¡å¾Œçµæœ
+# åˆ†é¡breaksç‚ºc(0, 600, 700, 800, 900, Inf)
+# åˆ†é¡labelsç‚ºc("E", "D", "C", "B", "A")
 
 df$ToeicLevel <- cut(x = df$ToeicGrade, 
-                     breaks = _________________________,
-                     labels = _____________________)
+                     breaks = c(0, 600, 700, 800, 900, Inf),
+                     labels = c("E", "D", "C", "B", "A"))
 
-# ¨Ï¥Îmapply()¶i¦æbmi­pºâ[½Õ¥ÎGetBmi()¡A°Ñ¼Æ¤À§O¬°df$Height, df$Weight]¡A¦^¶Çµ²ªG·s¼W¦Üdf$BmiÄæ¦ì
-# °Ñ¦Òhttp://blog.fens.me/r-apply/
-df$Bmi <- mapply(______, _________, _________)
+# ä½¿ç”¨mapply()é€²è¡Œbmiè¨ˆç®—[èª¿ç”¨GetBmi()ï¼Œåƒæ•¸åˆ†åˆ¥ç‚ºdf$Height, df$Weight]ï¼Œå›å‚³çµæœæ–°å¢è‡³df$Bmiæ¬„ä½
+# åƒè€ƒhttp://blog.fens.me/r-apply/
+df$Bmi <- mapply(GetBmi,df$Height, df$Weight)
 
-# ¨Ï¥Îmerge()¡A±Ndf.sport¸ê®Æ»Pdf¶i¦æ³sµ²«á§ó·s¦Üdf¡A¨Ã³]©wall.x = T«O¯d©Ò¦³¸ê®Æ
-# °Ñ¦Òhttps://joe11051105.gitbooks.io/r_basic/content/arrange_data/merge_and_subsetting.html
+# ä½¿ç”¨merge()ï¼Œå°‡df.sportè³‡æ–™èˆ‡dfé€²è¡Œé€£çµå¾Œæ›´æ–°è‡³dfï¼Œä¸¦è¨­å®šall.x = Tä¿ç•™æ‰€æœ‰è³‡æ–™
+# åƒè€ƒhttps://joe11051105.gitbooks.io/r_basic/content/arrange_data/merge_and_subsetting.html
 df <- merge(df, df.sport, by = 'Name', all.x = T)
 View(df)
