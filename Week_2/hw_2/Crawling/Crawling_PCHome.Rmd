@@ -1,0 +1,30 @@
+---
+title: "Rmd Crawling"
+author: "Perilium"
+date: "2018年9月23日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Crawler
+
+```{r RCrawler}
+library(jsonlite)
+#set website link
+url <- "https://ecshweb.pchome.com.tw/search/v3.3/all/results?q=asus&page=1&sort=rnk/dc"
+#get data
+my.data <- read_json(url)
+#frame data
+my.json <- (data.frame(do.call(rbind,my.data$prods)))
+```
+
+## Show Results
+
+```{r Table}
+library(knitr)
+kable(my.json)
+
+```
