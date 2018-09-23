@@ -5,8 +5,7 @@
    - W1_practice2.R
    - test_data.csv	*for practice2*
 ## 習題||hw_1
-- 網路爬蟲||Crawling
+ - 網路爬蟲||Crawling
 	- PCHome 爬蟲：ASUS查詢||Crawling PCHome:ASUS([連結||Link](https://perilium.github.io/NTU-CSX4001/Week_2/hw_2/Crawling/Crawling_PCHome.html))
-
-- OOXX遊戲||Tic_Tac_Toe
+ - OOXX遊戲||Tic_Tac_Toe
         - Tic_Tac_Toe.R
