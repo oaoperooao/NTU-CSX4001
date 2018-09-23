@@ -14,14 +14,15 @@
 		- e-2b 猜數字	||Guess Numbers
 			- *9/22 00:33 update:Guess Numbers input length filter updated*
 ## 第二周Week 2(9/20)
-### 已完成 finished
 - 0.熟悉Github Desktop		||get acquainted to Github Desktop
 - a.上傳本周練習成果		|| Upload exercise
 	- a-1.閱讀例題、分析並完成	||Read practices,analyze the code and finish it
-### 未完成 unfinished
 	- a-2.完成習題	|| Accomplish homework tasks
 		- a-2a 網路爬蟲 ||Crawling
 		- a-2b OOXX遊戲	||Tic Tac Toe
+## 第三周Week 3(9/27)
+### 已完成 finished
+### 未完成 unfinished
 
 ## ==我的規則||My rules==
  - a. 練習習題與作業，不更新舊檔，而是開新檔，方便比對。|| Practices and HWs will not be updated but be uploaded as new files for easier comparison.
