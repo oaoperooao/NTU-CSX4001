@@ -15,15 +15,21 @@
 			- *9/22 00:33 update:Guess Numbers input length filter updated*
 ## 第二周Week 2(9/20)
 - 0.熟悉Github Desktop		|| Get acquainted to Github Desktop
-- a.熟習R Markdown		|| Get acquainted to R Markdown
+- a.熟悉R Markdown		|| Get acquainted to R Markdown
 - b.上傳本周練習成果		|| Upload exercise
 	- b-1.閱讀例題、分析並完成	|| Read practices,analyze the code and finish it
 	- b-2.完成習題	|| Accomplish homework tasks
-		- a-2a 網路爬蟲 || Crawling
-		- a-2b OOXX遊戲	|| Tic Tac Toe
+		- b-2a 網路爬蟲 || Crawling
+		- b-2b OOXX遊戲	|| Tic Tac Toe
 ## 第三周Week 3(9/27)
 ### 已完成 finished
+- a.理解ggplot以及其他視覺化資料技巧		|| Learning to create a image of data by usin ggplot and others
+- b.嘗試視覺化資料		|| Try to visualize a file of data
+	- b-1.一般資料		|| Normal data
+		- b-1a.尋找有興趣的資料	|| Find a file of data which attracts me
+		- b-1b.完成資料視覺化	|| Complete the task
 ### 未完成 unfinished
+	- b-2.地圖資料		|| Map data
 
 ## ==我的規則||My rules==
  - a. 練習習題與作業，不更新舊檔，而是開新檔，方便比對。|| Practices and HWs will not be updated but be uploaded as new files for easier comparison.
