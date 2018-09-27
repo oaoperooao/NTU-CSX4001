@@ -33,11 +33,14 @@ while(i != 10){
       break
     } 
     com <- as.integer(com)
-    if(TTT[com]=="O"||TTT[com]=="X"){
-      error<- 0
-      cat("This position is already occupied!\n")
+    if(com>=1&&com<=9)  {
+      error<- 1
+      if(TTT[com]=="O"||TTT[com]=="X"){
+        error<- 0
+        cat("This position is already occupied!\n")
+      }
+      
     }
-    else if(com>=1&&com<=9)  error<- 1
     else {
       error<- 0
       cat("Invalid input! Please re-enter!\n")
@@ -89,4 +92,5 @@ while(i != 10){
   }
   i<-i+1
 }
+
 
