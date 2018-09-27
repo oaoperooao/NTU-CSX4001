@@ -21,6 +21,7 @@
 	- b-2.完成習題	|| Accomplish homework tasks
 		- b-2a 網路爬蟲 || Crawling
 		- b-2b OOXX遊戲	|| Tic Tac Toe
+			- *9/27 22:44 update:Invalid input filter bug fixed.* 
 ## 第三周Week 3(9/27)
 ### 已完成 finished
 - a.理解ggplot以及其他視覺化資料技巧		|| Learning to create a image of data by usin ggplot and others
@@ -32,8 +33,7 @@
 	- b-2.地圖資料		|| Map data
 
 ## ==我的規則||My rules==
- - a. 練習習題與作業，不更新舊檔，而是開新檔，方便比對。|| Practices and HWs will not be updated but be uploaded as new files for easier comparison.
- - b. 專題不開新檔，更新原檔，以免混淆隊友。	|| Projects will not be upload as new files in case of confusing teammates.
- - c. 歡迎各位指教並指出我的錯誤。|| Any suggestions and debugging is welcomed.
- - d. 歡迎參考我的程式碼截長補短。	|| It is welcomed to view my codes as examples to learn and avoid same mistakes I made.
- - e. 謝謝各位願意讀完這些 ^w^	||Thank you for reading these words ^w^
+ - a. 檔案不開新檔，更新原檔，以免混淆隊友。	|| Files will not be upload as new files in case of confusing teammates.
+ - b. 歡迎各位指教並指出我的錯誤。|| Any suggestions and debugging is welcomed.
+ - c. 歡迎參考我的程式碼截長補短。	|| It is welcomed to view my codes as examples to learn and avoid same mistakes I made.
+ - d. 謝謝各位願意讀完這些 ^w^	||Thank you for reading these words ^w^
