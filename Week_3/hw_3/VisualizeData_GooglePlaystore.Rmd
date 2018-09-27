@@ -20,7 +20,7 @@ mydata = read.csv("googleplaystore.csv")
 
 ## Analyze
 
-```{r analyze}
+```{r analyze,echo=FALSE}
   #評分分布
 my.plot3 <- ggplot(mydata, aes(x = Rating))
 my.plot3 <- my.plot3 +
