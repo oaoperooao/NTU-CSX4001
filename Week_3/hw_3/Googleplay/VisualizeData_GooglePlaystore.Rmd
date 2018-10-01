@@ -1,0 +1,43 @@
+---
+title: "VisualizeData_GooglePlaystore"
+author: "Perilium"
+date: "2018年9月27日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Call data
+此次資料採用kaggle網站提供的google play store APP的資料，
+先行去除無效或錯誤的資料後進行分析，主要分析應用程式的評分分布。
+```{r warning=FALSE}
+library(ggplot2)
+library(plotly)
+#data from https://www.kaggle.com/lava18/google-play-store-apps
+mydata = read.csv("googleplaystore.csv")
+```
+## Data Structure
+在分析之前，先整理此次所採計的資料。
+  - 採計的應用程式共9244項，共33種類型，以Family家庭類型最多，其次為Game遊戲、再者為Tools工具類型。
+```{r warning=FALSE}
+summary(mydata)
+plot_ly(mydata, x = ~Category, color = ~Category, type = "histogram")
+```
+
+## Rating
+  - 總體評分分布
+     - 大部分遊戲的評分坐落在4到4.7之間 ，以4.4的評分的遊戲最多。
+```{r analyze}
+my.plot3 <- ggplot(mydata, aes(x = Rating))
+my.plot3 <- my.plot3 +
+  geom_histogram(binwidth = 0.1, fill = "steelblue")
+my.plot3
+```
+
+  - 各類型APP評分分布
+```{r warning=FALSE}
+plot_ly(mydata, x = ~Rating, color = ~Category, type = "box")
+```
+
