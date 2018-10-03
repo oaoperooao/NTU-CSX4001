@@ -22,7 +22,6 @@ mydata = read.csv("googleplaystore.csv")
 在分析之前，先整理此次所採計的資料。
   - 採計的應用程式共9244項，共33種類型，以Family家庭類型最多，其次為Game遊戲、再者為Tools工具類型。
 ```{r warning=FALSE}
-summary(mydata)
 plot_ly(mydata, x = ~Category, color = ~Category, type = "histogram")
 ```
 

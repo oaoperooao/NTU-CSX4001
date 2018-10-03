@@ -24,7 +24,7 @@
 			- *9/27 22:44 update:Invalid input filter bug fixed.* 
 ## 第三周Week 3(9/27)
 ### 已完成 finished
-- a.理解ggplot以及其他視覺化資料技巧		|| Learning to create a image of data by usin ggplot and others
+- a.理解ggplot以及其他視覺化資料技巧		|| Learning to create a image of data by using ggplot and others
 - b.嘗試視覺化資料		|| Try to visualize a file of data
 	- b-1.一般資料		|| Normal data
 		- b-1a.尋找有興趣的資料	|| Find a file of data which attracts me
