@@ -41,7 +41,7 @@
 - b.完成互動式地圖資料		|| Create a map by using leaflet
 
 ### 未完成 unfinished
-- a.完成文字雲		|| Create a TextCloud
+- a.完成文字雲		|| Create a Wordcloud
 
 ## ==我的規則||My rules==
  - a. 檔案不開新檔，更新原檔，以免混淆隊友。	|| Files will not be upload as new files in case of confusing teammates.
