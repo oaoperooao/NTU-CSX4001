@@ -31,7 +31,7 @@
 		- b-1b.完成資料視覺化	|| Complete the task
 ### 未完成 unfinished
 	- b-2.地圖資料		|| Map data
-
+	- *後記：被google的API搞的煩到要死，等有空再研究*
 ## ==我的規則||My rules==
  - a. 檔案不開新檔，更新原檔，以免混淆隊友。	|| Files will not be upload as new files in case of confusing teammates.
  - b. 歡迎各位指教並指出我的錯誤。|| Any suggestions and debugging is welcomed.
