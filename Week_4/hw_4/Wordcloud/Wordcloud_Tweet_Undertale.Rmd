@@ -1,0 +1,71 @@
+---
+title: "Wordcloud_Tweet#Undertale"
+author: "Perilium"
+date: "2018?????10????4??????"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Libraries
+?f????d???????????????????????
+```{r library}
+library("wordcloud")#??????ھӪT?h?aΤ?????n??ϧ[??????
+library("RColorBrewer")#????h?aΤ??????d
+library(tidytext)
+library(dplyr)
+library(stringr)
+library(rtweet)
+```
+
+## Twitter API
+  ?????????????????????????????~???롤V???????w??????????f?šN?????˯?
+  ?w??^???????y???????????:
+`create_token(
+   app = "Myappname",
+   consumer_key = "My consumer_key",
+   consumer_secret = "My comsumer_secret",
+   access_token = "My access_token",
+  access_secret = "My access_secret",
+  )`
+```{r API, include=FALSE}
+create_token(
+  app = "CSX4001",
+  consumer_key = "os9BSEDDSzZKaa79hWbXeAUmm",
+  consumer_secret = "K6KcZy4ZhQYpFoMWKKgZjVTXKSP4gAvTc760meWwmlQLJEWsAg",
+  access_token = "3301954536-dvRxov51hUw3tU8yrJJnIDGHfhL0gVimjGX92u6",
+  access_secret = "4Y7uewr8SyVmdAXuFBp2jXKskaLVuasmtPoizyR2Fx2x5",
+)
+```
+
+## ?k???ӹn????
+  
+```{r main}
+#Grab tweets
+hmt <- search_tweets(
+  "#undertale", n = 10000, include_rts = FALSE
+)
+
+#Unnest the words - code via Tidy Text
+hmtTable <- hmt %>% 
+  unnest_tokens(word, text)
+
+#remove stop words - aka typically very common words such as "the", "of" etc
+data(stop_words)
+hmtTable <- hmtTable %>%
+  anti_join(stop_words)
+
+#do a word count
+hmtTable <- hmtTable %>%
+  count(word, sort = TRUE) 
+#Remove other nonsense words
+hmtTable <-hmtTable %>%
+  filter(!word %in% c('t.co','https','undertale',"art","it's",'el','en','tv','に','た','が','て','の','と','は','で','を','って','い','な','っ','し','した','たい','アンダー','テール','繋がり','さん','ない','か','です','だ','2','も','れ','描','<U+307E>','<U+307E><U+3059>','<U+307F>','3','<U+304B><U+3089>',"ます",'や','もう','ちゃん','かな','けど','しま','ま','よ','day','み','から','見'))
+
+wordcloud(words = hmtTable$word, freq = hmtTable$n, min.freq = 50,
+          random.order=FALSE, rot.per=0.35,scale = c(3, 1),
+          colors=brewer.pal(12,"Paired" ))
+```
+
