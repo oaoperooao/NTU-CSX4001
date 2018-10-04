@@ -1,8 +1,6 @@
 install.packages("wordcloud") # word-cloud generator 
 install.packages("RColorBrewer") # color palettes
 # Load
-library("wordcloud")
-library("RColorBrewer")
 install.packages("rtweet")
 install.packages("tidytext")
 install.packages("dplyr")
@@ -10,6 +8,8 @@ install.packages("stringr")
 require(devtools)
 install_github("lchiffon/wordcloud2")
 
+library("wordcloud")
+library("RColorBrewer")
 library(tidytext)
 library(dplyr)
 library(stringr)
@@ -28,7 +28,7 @@ create_token(
 
 #Grab tweets - note: reduce to 1000 if it's slow
 hmt <- search_tweets(
-  "#undertale", n = 2000, include_rts = FALSE
+  "#undertale", n = 10000, include_rts = FALSE
 )
 
 hmt$text
@@ -51,8 +51,10 @@ hmtTable <-hmtTable %>%
   filter(!word %in% c('t.co', 'https', 'undertale', "art", "it's", 'el', 'en', 'tv','に','た','が','て','の','と','は',
                      'で','を','って','い','な','っ','し','した','たい','アンダー','テール','繋がり','さん','ない','か','です',
                      'だ','2','も','れ','描','<U+307E>','<U+307E><U+3059>','<U+307F>','3','<U+304B><U+3089>',"ます",'や','もう','ちゃん',
-                     'かな','けど','しま','ま','よ'))
-wordcloud(words = hmtTable$word, freq = hmtTable$n, min.freq = 21,
+                     'かな','けど','しま','ま','よ','day','み','から','見'))
+hmtTable 
+
+wordcloud(words = hmtTable$word, freq = hmtTable$n, min.freq = 50,
           random.order=FALSE, 
-          colors=brewer.pal(8, "Dark2"))
+          colors=brewer.pal(12,"Paired" ))
 
