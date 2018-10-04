@@ -1,4 +1,5 @@
 ﻿# NTU-CSX4001 Semester107-1
+
 ## 第一周Week 1(9/13)
 - a. 下載R語言             || Download R
 - b. 下載Rstudio           || Download Rstudio
@@ -13,6 +14,7 @@
 		- e-2a 基礎習題|| Basic tasks
 		- e-2b 猜數字	|| Guess Numbers
 			- *9/22 00:33 update:Guess Numbers input length filter updated*
+
 ## 第二周Week 2(9/20)
 - 0.熟悉Github Desktop		|| Get acquainted to Github Desktop
 - a.熟悉R Markdown		|| Get acquainted to R Markdown
@@ -22,6 +24,7 @@
 		- b-2a 網路爬蟲 || Crawling
 		- b-2b OOXX遊戲	|| Tic Tac Toe
 			- *9/27 22:44 update:Invalid input filter bug fixed.* 
+
 ## 第三周Week 3(9/27)
 ### 已完成 finished
 - a.理解ggplot以及其他視覺化資料技巧		|| Learning to create a image of data by using ggplot and others
@@ -32,6 +35,14 @@
 ### 未完成 unfinished
 	- b-2.地圖資料		|| Map data
 	- *後記：被google的API搞的煩到要死，等有空再研究*
+
+## 第四周Week 4(10/4)
+### 已完成 finished
+- b.完成互動式地圖資料		|| Create a map by using leaflet
+
+### 未完成 unfinished
+- a.完成文字雲		|| Create a TextCloud
+
 ## ==我的規則||My rules==
  - a. 檔案不開新檔，更新原檔，以免混淆隊友。	|| Files will not be upload as new files in case of confusing teammates.
  - b. 歡迎各位指教並指出我的錯誤。|| Any suggestions and debugging is welcomed.
