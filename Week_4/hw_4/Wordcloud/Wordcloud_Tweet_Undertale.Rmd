@@ -2,7 +2,8 @@
 title: "Wordcloud_Tweet#Undertale"
 author: "Perilium"
 date: "2018/10/4"
-output: html_document
+output:
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -12,12 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Libraries
 Import needed libraries
 ```{r library}
-library("wordcloud")?
+library("wordcloud")
 library("RColorBrewer")
 library(tidytext)
 library(dplyr)
 library(stringr)
 library(rtweet)
+library(stopwords)
 ```
 
 ## Twitter API
@@ -56,12 +58,15 @@ data(stop_words)
 hmtTable <- hmtTable %>%
   anti_join(stop_words)
 
+jpstop <- stopwords::stopwords("ja", source = "stopwords-iso")
+jpstop
 #do a word count
 hmtTable <- hmtTable %>%
   count(word, sort = TRUE) 
+hmtTable
 #Remove other nonsense words
-hmtTable <-hmtTable %>%
-  filter(!word %in% c('t.co','https','undertale',"art","it's",'el','en','tv','に','た','が','て','の','と','は','で','を','って','い','な','っ','し','した','たい','アンダー','テール','繋がり','さん','ない','か','です','だ','2','も','れ','描','<U+307E>','<U+307E><U+3059>','<U+307F>','3','<U+304B><U+3089>',"ます",'や','もう','ちゃん','かな','けど','しま','ま','よ','day','み','から','見'))
+hmtTable <-hmtTable %>%  filter(!word %in%  jpstop) %>%
+  filter(!word %in% c("t.co","https","undertale","art","it's","2","描","3","day","見","1","<U+3063><U+3066>"))
 
 wordcloud(words = hmtTable$word, freq = hmtTable$n, min.freq = 50,
           random.order=FALSE, rot.per=0.35,scale = c(3, 1),

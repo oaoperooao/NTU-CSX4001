@@ -6,13 +6,17 @@ output: html_document
 ---
 ## 載入資料庫
 ```{r}
+knitr::opts_chunk$set(echo = TRUE)
 library(leaflet)
+library(htmltools)
 ```
 
 ## 載入地圖、座標，標上地圖點
-先行將新竹所有7-11的地址轉換為座標，再將其製成csv檔，之後在地圖上標上點即完成
+利用Crawling_7-11address.Rmd 將新竹市的7-11相關資料抓下來，
+
+利用座標轉換網站http://gps.uhooamber.com/address-to-lat-lng.html 轉換成座標後，將兩個資料製成csv檔，之後在地圖上標上點即完成
 ```{r cars}
-data <- read.csv("C:\\Users\\perot\\Desktop\\NTU-CSX4001\\Week_4\\hw_4\\map\\address.csv")
-leaflet(data = data[1:135,]) %>% addTiles() %>%
-  addMarkers(~經度, ~緯度)
+dat <- read.csv("C:\\Users\\perot\\Desktop\\NTU-CSX4001\\Week_4\\hw_4\\map\\7-11raw.csv")
+leaflet(data = dat[1:134,]) %>% addTiles() %>%
+  addMarkers(~Lon,~Lat, popup = ~Tel)
 ```
