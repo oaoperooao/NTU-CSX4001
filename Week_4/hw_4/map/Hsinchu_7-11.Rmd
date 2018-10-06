@@ -4,9 +4,11 @@ author: "Perilium"
 date: "2018年10月4日"
 output: html_document
 ---
-## 載入資料庫
-```{r}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+## 載入資料庫
+```{r inside}
 library(leaflet)
 library(htmltools)
 ```
@@ -14,9 +16,14 @@ library(htmltools)
 ## 載入地圖、座標，標上地圖點
 利用Crawling_7-11address.Rmd 將新竹市的7-11相關資料抓下來，
 
-利用座標轉換網站http://gps.uhooamber.com/address-to-lat-lng.html 轉換成座標後，將兩個資料製成csv檔，之後在地圖上標上點即完成
-```{r cars}
-dat <- read.csv("C:\\Users\\perot\\Desktop\\NTU-CSX4001\\Week_4\\hw_4\\map\\7-11raw.csv")
-leaflet(data = dat[1:134,]) %>% addTiles() %>%
-  addMarkers(~Lon,~Lat, popup = ~Tel)
+利用座標轉換網站`http://gps.uhooamber.com/address-to-lat-lng.html `轉換成座標後，將兩個資料製成csv檔，之後在地圖上標上點即完成
+
+```{r map}
+dat <- read.csv("https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/7-11raw.csv")
+for(i in c(1:134)){
+  dat$content[i] <- paste(sep=":",dat$Name[i],dat$Tel[i])
+
+}
+  leaflet(data = dat[1:134,]) %>% addTiles() %>%
+  addMarkers(~Lon,~Lat, popup = ~content)
 ```
