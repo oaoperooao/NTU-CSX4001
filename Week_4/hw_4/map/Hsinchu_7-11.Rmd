@@ -24,5 +24,5 @@ for(i in c(1:134)){
 
 }
 leaflet(data = dat[1:134,]) %>% addTiles() %>%
-  addMarkers(~Lon,~Lat, popup = ~Tel)
+  addMarkers(~Lon,~Lat, popup = ~content)
 ```
