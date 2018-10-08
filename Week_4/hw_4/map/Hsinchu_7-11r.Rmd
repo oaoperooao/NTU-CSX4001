@@ -20,7 +20,7 @@ library(leaflet)
 ```{r map}
 dat <- read.csv("https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/7-11raw.csv")
 for(i in c(1:134)){
-  dat$content[i] <- paste("門市:",dat$Name[i],"  電話:",dat$Tel[i])
+  dat$content[i] <- paste("門市:",dat$Name[i],"  電話:",dat$Tel[i],sep="")
 
 }
 leaflet(data = dat[1:134,]) %>% addTiles() %>%

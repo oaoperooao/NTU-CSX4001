@@ -5,7 +5,10 @@ date: "2018/10/4"
 output:
   html_document: default
 ---
+# å‘èFUndertale
+Undertale¥ˆêŒÂŠOš —VEC—VE‘å•”•ª—RToby Fox©ŒÈˆêlŠ®¬(•ïŠÜ‰¹ÙAã‰á`A›’ö®)B“Kˆ§UndertaleOü”N???“oãNintendo SwitchCŸŸ•ÖˆÈ‘´ìˆ×å‘èB
 
+Undertaleå«‘R›ßãSO”NC˜¹İš ŠO\•ª—¬™BCí”\ŠÅŒ©ˆÈ‘´ìˆ×å‘è“I“ñ‘nˆ½“¯lìCŸŸ•Ö’²???İTwitterãC
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -20,17 +23,18 @@ library(dplyr)
 library(stringr)
 library(rtweet)
 library(stopwords)
-library(plotly)
+library(ggplot2)
 ```
 
 ## Twitter API
   Code hide for privacy and security.Example code below:  
 create_token(  
-   app = "Myappname",  
-   consumer_key = "My consumer_key",  
-   consumer_secret = "My comsumer_secret",  
-   access_token = "My access_token",  
-  access_secret = "My access_secret",  
+
+     app = "Myappname",  
+     consumer_key = "My consumer_key",  
+     consumer_secret = "My comsumer_secret",  
+     access_token = "My access_token",  
+     access_secret = "My access_secret",  
 )  
 ```{r API, include=FALSE}
 create_token(
@@ -61,19 +65,20 @@ hmtTable <- hmt %>%
 
 #remove stop words - aka typically very common words such as "the", "of" etc
 data(stop_words)
+
 hmtTable <- hmtTable %>%
   anti_join(stop_words)
 
+#Remove other nonsense words
+
 jpstop <- stopwords::stopwords("ja", source = "stopwords-iso")
-#do a word count
-
 hmtTable <-hmtTable %>%  filter(!word %in%  jpstop) %>%
-  filter(!word %in% c("t.co","https","undertale","art","it's","2","è¬ ?","3","day","éš•?","1","de","ç¸ºï½£","ç¸ºï½£ç¸ºï½¦"))
-
+  filter(!word %in% c("t.co","https","undertale","art","it's","2","•`","3","day","Œ©","1","de","‚Á","‚Á‚Ä","5","–Ú","‚İ","‚¢‚¢","ƒAƒ“ƒ_[","ƒe[ƒ‹","‚Â","‚³‚ñ","‚½‚¢","‚Ü","’†","ˆê","‚µ‚½","ƒtƒŠ","ƒXƒN","‚æ","‚Ä‚¢","‚¿‚á‚ñ","ƒAƒ“ƒ_","‚½‚ç","‚Ë","ƒAƒ“ƒe","‚¯‚Ç"))
 hmtTable <- hmtTable %>%
   count(word, sort = TRUE) 
+#do a word count
+
 hmtTable
-#Remove other nonsense words
 
 wordcloud(words = hmtTable$word, freq = hmtTable$n, min.freq = 50,
           random.order=FALSE, rot.per=0.35,scale = c(3, 1),
