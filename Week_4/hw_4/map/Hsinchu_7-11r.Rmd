@@ -7,6 +7,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+此次挑戰使用leaflet製出互動式地圖，主題為新竹市7-11的分布圖，標籤內容附上各門市的電話號碼。
 ## 載入資料庫
 ```{r inside}
 library(leaflet)
@@ -16,6 +17,8 @@ library(leaflet)
 利用Crawling_7-11address.Rmd 將新竹市的7-11相關資料抓下來，
 
 利用座標轉換網站`http://gps.uhooamber.com/address-to-lat-lng.html `轉換成座標後，將兩個資料製成csv檔，之後在地圖上標上點即完成
+
+按進標籤後，即可看到門市電話號碼(本來是想放門市名稱與電話，但是會出問題，等我更新程式碼再說)
 
 ```{r map}
 dat <- read.csv("https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/7-11raw.csv")

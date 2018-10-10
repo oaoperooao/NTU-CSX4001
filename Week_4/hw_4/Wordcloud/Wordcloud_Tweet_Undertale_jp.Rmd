@@ -5,10 +5,10 @@ date: "2018/10/4"
 output:
   html_document: default
 ---
-# å‘èFUndertale
-Undertale¥ˆêŒÂŠOš —VEC—VE‘å•”•ª—RToby Fox©ŒÈˆêlŠ®¬(•ïŠÜ‰¹ÙAã‰á`A›’ö®)B“Kˆ§UndertaleOü”N???“oãNintendo SwitchCŸŸ•ÖˆÈ‘´ìˆ×å‘èB
+# é—œæ–¼Undertale
+Undertaleæ˜¯ä¸€æ¬¾éŠæˆ²ï¼Œç”±Toby Foxè£½ä½œã€‚é©é€¢Undertaleä¸‰å‘¨å¹´æš¨Nintendo Switchä¸Šæ¶ï¼Œæ•…ä»¥æ­¤ç‚ºä¸»é¡Œã€‚
 
-Undertaleå«‘R›ßãSO”NC˜¹İš ŠO\•ª—¬™BCí”\ŠÅŒ©ˆÈ‘´ìˆ×å‘è“I“ñ‘nˆ½“¯lìCŸŸ•Ö’²???İTwitterãC
+æ­¤æ¬¡æ¡ç”¨Twitterä¸Šçš„è²¼æ–‡åšç‚ºè³‡æ–™ä¾†æºï¼Œæ”¶é›†èˆ‡Undertaleç›¸é—œçš„è²¼æ–‡ä¸¦è£½æˆæ–‡å­—é›²ã€‚ 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -28,6 +28,7 @@ library(ggplot2)
 
 ## Twitter API
   Code hide for privacy and security.Example code below:  
+
 create_token(  
 
      app = "Myappname",  
@@ -35,7 +36,8 @@ create_token(
      consumer_secret = "My comsumer_secret",  
      access_token = "My access_token",  
      access_secret = "My access_secret",  
-)  
+)
+`
 ```{r API, include=FALSE}
 create_token(
   app = "CSX4001",
@@ -56,7 +58,7 @@ hmt <- search_tweets(
 ```
 
 ## Making Cloud
-
+é‡è¦‹å•é¡Œç‚ºï¼Œæ­¤æ¬¡æ‰€éœ€éæ¿¾çš„èªè¨€ç‚ºæ—¥èªï¼Œè½‰æ›ç·¨ç¢¼æœƒå‡ºç¾äº‚ç¢¼ï¼Œæ•…å…ˆç•™ä¸‹ä»¥è³‡æ–™åº«åˆç¯©éå¾Œçš„æ–‡å­—é›²ã€‚(æ–‡å­—é›²å…§è©å½™å‡ºç¾æœ€ä½é »ç‡ç‚º50)
 ```{r cloud}
 
 #Unnest the words - code via Tidy Text
@@ -73,15 +75,24 @@ hmtTable <- hmtTable %>%
 
 jpstop <- stopwords::stopwords("ja", source = "stopwords-iso")
 hmtTable <-hmtTable %>%  filter(!word %in%  jpstop) %>%
-  filter(!word %in% c("t.co","https","undertale","art","it's","2","•`","3","day","Œ©","1","de","‚Á","‚Á‚Ä","5","–Ú","‚İ","‚¢‚¢","ƒAƒ“ƒ_[","ƒe[ƒ‹","‚Â","‚³‚ñ","‚½‚¢","‚Ü","’†","ˆê","‚µ‚½","ƒtƒŠ","ƒXƒN","‚æ","‚Ä‚¢","‚¿‚á‚ñ","ƒAƒ“ƒ_","‚½‚ç","‚Ë","ƒAƒ“ƒe","‚¯‚Ç"))
+  filter(!word %in% c("t.co","https","undertale","art","it's","2","?`","3","day","??","1","de"))
 hmtTable <- hmtTable %>%
   count(word, sort = TRUE) 
 #do a word count
 
-hmtTable
+```
 
+```{r output}
 wordcloud(words = hmtTable$word, freq = hmtTable$n, min.freq = 50,
           random.order=FALSE, rot.per=0.35,scale = c(3, 1),
           colors=brewer.pal(12,"Paired" ))
 ```
+
+é™¤äº†æ—¥æ–‡ä»¥å¤–ï¼Œå¯ä»¥æ˜é¡¯çœ‹åˆ°æœ€å¸¸å‡ºç¾çš„ç‚ºNintendoSwitchï¼Œå¯è¦‹çœ¾å¤šç©å®¶ååˆ†é—œæ³¨Undertaleåœ¨NSå¹³å°ä¸Šæ¶çš„æ¶ˆæ¯ã€‚
+
+ç¬¬äºŒå¤§çš„inktober2018ï¼Œæ˜¯ç”±åœ‹å¤–ç™¼èµ·çš„ã€Œç¹ªç•«æœˆã€ï¼Œæ¨å‹•æœƒè€…åæœˆæ¯å¤©ä¸€å¹…ç•«ä½œçš„æ´»å‹•ï¼Œå¯è¦‹undertaleä¹Ÿè¢«ç•«å®¶å€‘ç•¶ä½œç¹ªç•«çš„ä¸»é¡Œä¹‹ä¸€ã€‚
+
+é™¤æ­¤ä¹‹å¤–ï¼Œé‚„æœ‰çŸ¥åè…³è‰²å¦‚sans,frisk,chara,undyne,flowey,papyrusç­‰ç­‰ï¼Œå…¶ä¸­ä»¥sansçš„å‡ºç¾é »ç‡æœ€å¤§ï¼Œå¯è¦‹ç©å®¶å°ä»–çš„å–œæ„›ã€‚
+
+å¦å¤–é‚„æœ‰undertaleauï¼Œæ„æ—¨undertaleçš„å¹³è¡Œä¸–ç•Œ(AU)ï¼Œæ­¤é¡äºŒå‰µåœ¨éŠæˆ²æ¨è¡Œå¾Œä¹Ÿå¤§é‡å‡ºç¾ï¼Œè«ä¸å¾—ä¹Ÿé€²å…¥äº†æ–‡å­—é›²ä¸­ã€‚
 
