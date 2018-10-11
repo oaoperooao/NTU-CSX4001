@@ -23,29 +23,36 @@ library(leaflet)
 ```{r map}
 dat <- read.csv("https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/7-11raw.csv")
 for(i in c(1:134)){
-  dat$content[i] <- paste("門市:",dat$Name[i],"<br/> 電話:",dat$Tel[i],"<br/>地址：",dat$Add[i],sep="")
+  dat$content[i] <- paste("門市:",dat$Name[i],"<br/> 電話:",dat$Tel[i],sep="")
 
 }
 ```
-由於資料量太大，故分為北區、東區(一)、東區(二)、香山區三個地圖。
+以下地圖分為總圖、北區、東區、香山區四個地圖。
+
+### 此為新竹市7-11分布總圖
+
+```{r Whole}
+leaflet(dat[1:133,]) %>% addTiles() %>%
+  addMarkers(~Lon,~Lat, popup = ~content)
+```
 
 ### 此為北區地圖
+
 ```{r North}
 leaflet(dat[1:30,]) %>% addTiles() %>%
   addMarkers(~Lon,~Lat, popup = ~content)
 ```
-### 此為東區(一)地圖
+
+### 此為東區地圖
+
 ```{r East}
-leaflet(dat[31:51,]) %>% addTiles() %>%
+leaflet(dat[31:113,]) %>% addTiles() %>%
   addMarkers(~Lon,~Lat, popup = ~content)
 ```
-### 此為東區(二)地圖
-```{r North}
-leaflet(dat[94:113,]) %>% addTiles() %>%
-  addMarkers(~Lon,~Lat, popup = ~content)
-```
+
 ### 此為香山區地圖
-```{r North}
-leaflet(dat[115:134,]) %>% addTiles() %>%
+
+```{r hSianshan}
+leaflet(dat[114:133,]) %>% addTiles() %>%
   addMarkers(~Lon,~Lat, popup = ~content)
 ```
