@@ -38,16 +38,6 @@ create_token(
      access_token = "My access_token",  
      access_secret = "My access_secret",  
 )
-`
-```{r API, include=FALSE}
-create_token(
-  app = "CSX4001",
-  consumer_key = "os9BSEDDSzZKaa79hWbXeAUmm",
-  consumer_secret = "K6KcZy4ZhQYpFoMWKKgZjVTXKSP4gAvTc760meWwmlQLJEWsAg",
-  access_token = "3301954536-dvRxov51hUw3tU8yrJJnIDGHfhL0gVimjGX92u6",
-  access_secret = "4Y7uewr8SyVmdAXuFBp2jXKskaLVuasmtPoizyR2Fx2x5",
-)
-```
 
 ## Tweet collect
 ```{r get}
