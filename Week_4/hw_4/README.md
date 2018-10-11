@@ -13,7 +13,7 @@
 	- Crawling_7-11address.html
 	- Hsinchu_7-11.R
 	- Hsinchu_7-11.Rmd
-	- Hsinchu_7-11.html([連結||Link](https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/Hsinchu_7-11.html))
+	- Hsinchu_7-11.html([連結||Link](https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/Hsinchu_7-11r.html))
 	- Hsinchu_7-11r.Rmd
 	- Hsinchu_7-11r.html
 	
