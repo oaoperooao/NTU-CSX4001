@@ -1,0 +1,10 @@
+library(ggmap)
+library(mapproj)
+
+has_goog_key()
+goog_key()
+has_goog_client()
+has_goog_signature()
+register_google(key = "AIzaSyB8N5qP3TmqFQisSDHaBPMu_7rWGyXf0Ec")
+map <- get_map(location = 'Taiwan', zoom = 7)
+ggmap(map)

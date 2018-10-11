@@ -11,6 +11,7 @@ Undertale是一款遊戲，由Toby Fox製作。適逢Undertale三周年暨Ninten
 此次採用Twitter上的貼文做為資料來源，收集與Undertale相關的貼文並製成文字雲。 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
 ## Libraries
@@ -49,35 +50,39 @@ create_token(
 ```
 
 ## Tweet collect
-  
 ```{r get}
 #Grab tweets
-hmt <- search_tweets(
-  "#undertale", n = 10000, include_rts = FALSE
-)
+#hmt <- search_tweets(
+#  "#undertale", n = 10000, include_rts = FALSE
+#)
 ```
 
 ## Making Cloud
 遇見問題為，此次所需過濾的語言為日語，轉換編碼會出現亂碼，故先留下以資料庫初篩過後的文字雲。(文字雲內詞彙出現最低頻率為50)
-```{r cloud}
+```{r stopword}
 
 #Unnest the words - code via Tidy Text
-hmtTable <- hmt %>% 
-  unnest_tokens(word, text)
+#hmtTable <- hmt %>% 
+#  unnest_tokens(word, text)
 
 #remove stop words - aka typically very common words such as "the", "of" etc
-data(stop_words)
+#data(stop_words)
+# hmtTable <- hmtTable %>%
+#  anti_join(stop_words)
+# hmtTable <- hmtTable %>%
+#  count(word, sort = TRUE) 
+# hmtTable
+```
 
-hmtTable <- hmtTable %>%
-  anti_join(stop_words)
+```{r main}
+# Remove other nonsense words
 
-#Remove other nonsense words
+#write.csv(hmtTable, "raw.csv")
 
+hmtTable <- read.csv("raw.csv",row.name = 1)
 jpstop <- stopwords::stopwords("ja", source = "stopwords-iso")
 hmtTable <-hmtTable %>%  filter(!word %in%  jpstop) %>%
-  filter(!word %in% c("t.co","https","undertale","art","it's","2","?`","3","day","??","1","de"))
-hmtTable <- hmtTable %>%
-  count(word, sort = TRUE) 
+  filter(!word %in% c("t.co","https","undertale","art","it's","2","?`","3","day","1","de",'さん','した','<U+306E>','<U+3063>','<U+3063><U+3066>','<U+30A2><U+30F3><U+30C0><U+30FC>','<U+30C6><U+30FC><U+30EB>','<U+305F><U+3044>','描','U+7E4B><U+304C><U+308A>','好<U+304D>','<U+7E4B><U+304C><U+308A>','<U+30EB><U+30FC><U+30C8>','<U+307E>','<U+307F>','<U+30B2><U+30FC><U+30E0>','<U+30B5><U+30F3><U+30BA>','<U+30D5><U+30EA>','<U+3088>','<U+3061><U+3083><U+3093>','<U+30A2><U+30F3><U+30C0>','見','10','5','目','<U+3051><U+3069>','<U+30AD><U+30E3><U+30E9>','<U+305F><U+3089>','<U+308A>','<U+304F>','<U+30B9><U+30AF>','<U+7D75>描<U+304D>','<U+7D75>','<U+3066><U+3044>','<U+306D>','el','<U+5B9F>況','<U+3057><U+307E>','<U+30A4><U+30E9><U+30B9><U+30C8>','版','<U+30AF><U+30EA><U+30A2>','<U+30FC>','4','日','<U+3044><U+3044>','<U+308B>','8','la','人','中'))
 #do a word count
 
 ```
