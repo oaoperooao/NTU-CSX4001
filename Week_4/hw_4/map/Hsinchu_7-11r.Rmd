@@ -18,14 +18,34 @@ library(leaflet)
 
 利用座標轉換網站`http://gps.uhooamber.com/address-to-lat-lng.html `轉換成座標後，將兩個資料製成csv檔，之後在地圖上標上點即完成
 
-按進標籤後，即可看到門市電話號碼(本來是想放門市名稱與電話，但是會出問題，等我更新程式碼再說)
+按進標籤後，即可看到門市電話地址。
 
 ```{r map}
 dat <- read.csv("https://perilium.github.io/NTU-CSX4001/Week_4/hw_4/map/7-11raw.csv")
 for(i in c(1:134)){
-  dat$content[i] <- paste("門市:",dat$Name[i],"  電話:",dat$Tel[i],sep="")
+  dat$content[i] <- paste("門市:",dat$Name[i],"<br/> 電話:",dat$Tel[i],"<br/>地址：",dat$Add[i],sep="")
 
 }
-leaflet(data = dat[1:134,]) %>% addTiles() %>%
+```
+由於資料量太大，故分為北區、東區(一)、東區(二)、香山區三個地圖。
+
+### 此為北區地圖
+```{r North}
+leaflet(dat[1:30,]) %>% addTiles() %>%
+  addMarkers(~Lon,~Lat, popup = ~content)
+```
+### 此為東區(一)地圖
+```{r East}
+leaflet(dat[31:51,]) %>% addTiles() %>%
+  addMarkers(~Lon,~Lat, popup = ~content)
+```
+### 此為東區(二)地圖
+```{r North}
+leaflet(dat[94:113,]) %>% addTiles() %>%
+  addMarkers(~Lon,~Lat, popup = ~content)
+```
+### 此為香山區地圖
+```{r North}
+leaflet(dat[115:134,]) %>% addTiles() %>%
   addMarkers(~Lon,~Lat, popup = ~content)
 ```
