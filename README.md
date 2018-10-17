@@ -41,10 +41,8 @@
 - b.完成互動式地圖資料		|| Create a map by using leaflet
 
 ## 第五周Week 5(10/11)
-### 已完成 finished
+- a.延續上周課程，利用TF-IDF進行資料分析		|| Learning to text mining and analyze with TF-IDF 
 
-### 未完成 unfinished
-- a.延續上周課程，利用TF-IDF進行資料分析		|| Learning to create a image of data by using ggplot and others
 
 ## ==我的規則||My rules==
  - a. 檔案不開新檔，更新原檔，以免混淆隊友。	|| Files will not be upload as new files in case of confusing teammates.
