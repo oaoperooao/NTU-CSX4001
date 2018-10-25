@@ -29,14 +29,18 @@ library(fpc)
 reddit <- as.character(readtext("./corpus/reddit.txt"))
 twitter <- as.character(readtext("./corpus/twitter.txt"))
 tumblr <- as.character(readtext("./corpus/tumblr.txt"))
+fb <- as.character(readtext("./corpus/FB.txt"))
+pin <-as.character(readtext("./corpus/Pinterest.txt"))
+line <-as.character(readtext("./corpus/Line.txt"))
+flickr<-as.character(readtext("./corpus/Flickr.txt"))
 ```
 
 ## 定義標題
 ```{r}
-titles <- c("Reddit", "Twitter","Tumblr")
+titles <- c("Reddit", "Twitter","Tumblr","Facebook","Pinterest","Line","Flickr")
 
 # store the content of the website
-websites_content <- list(reddit,twitter,tumblr)
+websites_content <- list(reddit,twitter,tumblr,fb,pin,line,flickr)
 ```
 
 ##整理資料
@@ -79,7 +83,7 @@ comparison_word_freq
 ##製成文字雲
     可以發現，在三個網站中，最常使用的字是information，便是告知使用者那些資訊會被蒐集，而services站第二位，可見蒐集資料是為了提供服務，而account,privacy,data,content等等，皆和蒐集的內容有關，再小一點的字還有cookies,browser,address，可以得知網站蒐集的資料細項。
 ```{r}
-wordcloud2(data = comparison_word_freq, size=0.5)
+wordcloud2(data = comparison_word_freq, size=1)
 ```
 
 
@@ -91,7 +95,7 @@ comparison_word_freq_each_website <- comparison %>%
         anti_join(stop_words) %>%
         group_by(websites_title) %>%
         count(word, sort = TRUE) %>%
-        top_n(15) %>%
+        top_n(10) %>%
         ungroup() %>%
         mutate(website = factor(websites_title),
                text_order = nrow(.):1) %>%
@@ -106,7 +110,7 @@ comparison_word_freq_each_website
 
 
 #計算單字佔文章百分率(單字出現率)
-以information,services,account占前三名，而各網站最常出現的前三名是
+    以information,services,account占前三名，而各網站最常出現的前三名是
 
 Reddit:information,services,reddit
 
@@ -114,7 +118,7 @@ Twitter:twitter,information,data
 
 Tumblr:information,services,account
 
-可見即使是相同的隱私權政策，三個網站的注重點仍然不同。reddit和大體相同，走平穩路線；twitter則是比較認真，將許多information製成data(或是只是想代換詞句？)；tumblr的隱私權，最主要和帳戶相關資料講得比較詳細。
+可見即使是相同的隱私權政策，三個網站的注重點仍然不同。reddit和大體相同，走平穩路線；twitter則是搜集較多data(或是只是想代換詞句？)；tumblr的隱私權，最主要和帳戶相關資料講得比較詳細。
 ```{r}
 # calculate percent of word use across all websites
 site_pct <- comparison %>%

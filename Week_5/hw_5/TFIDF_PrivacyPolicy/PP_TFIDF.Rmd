@@ -31,6 +31,11 @@ docs = Corpus(VectorSource(rawData$text))
 ## Including Plots
 
 ```{r clean, warning=FALSE}
+for (j in seq(docs)){
+  for(i in 1:length(keywords$X1)){
+  docs[[j]] <- gsub(keywords$X1[i],keywords$X2[i], docs[[j]])
+  }
+}
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))
 })
@@ -38,6 +43,8 @@ docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, content_transformer(tolower))
 docsPTD <- tm_map(docs, PlainTextDocument)
+keywords <- read.csv("keywords.csv")
+str(docs)
 keywords = read.csv("keywords.csv")
 mixseg = worker()
 keys = as.matrix(keywords)
@@ -48,6 +55,8 @@ jieba_tokenizer = function(d){
 }
 seg = lapply(docs, jieba_tokenizer)
 ```
+
+
 ```{r TF}
 freqFrame = as.data.frame(table(unlist(seg)))
 
@@ -80,6 +89,5 @@ for(x in 1:nrow(tdm))
 
 findZeroId = as.matrix(apply(doc.tfidf, 1, sum))
 tfidfnn = doc.tfidf[-which(findZeroId == 0),]
-
 write.csv(tfidfnn, "show.csv")
 ```
