@@ -1,0 +1,12 @@
+name: asdf
+title: asdf
+username:
+account: perilium
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 533602
+bundleId: 1661723
+url: https://perilium.shinyapps.io/asdf/
+when: 1540437864.57998
+asMultiple: FALSE
+asStatic: FALSE
