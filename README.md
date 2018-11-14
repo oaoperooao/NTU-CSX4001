@@ -43,6 +43,16 @@
 ## 第五周Week 5(10/11)
 - a.延續上周課程，利用TF-IDF進行資料分析		|| Learning to text mining and analyze with TF-IDF 
 
+## 第六周Week 6(10/18)~第八周Week 8(11/1)
+### 專題一 Project 1
+- a.找到專題主題		|| Find a topic for the project 
+- b.找到所需資料		|| Find reachable data about the topic
+- c.如果找不到，就重複a,b步驟直到找到為止||If not,repeat step a,b until you find reachable data
+- d.利用RMarkdown完成基礎分析	|| Use RMarkdown to finish basic analysis
+- e.將結果製成shiny檔		|| Use Shiny to present the result
+
+## 第九周Week 9(11/8)
+- a.課堂上完成電影機器人	|| Made a Movie Chatbot in class
 
 ## ==我的規則||My rules==
  - a. 檔案不開新檔，更新原檔，以免混淆隊友。	|| Files will not be upload as new files in case of confusing teammates.
