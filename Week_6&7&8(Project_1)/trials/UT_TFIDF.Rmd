@@ -1,0 +1,120 @@
+---
+title: "UT-TFIDF"
+author: "Perilium"
+date: "2018年10月17日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 載入資料庫
+
+```{r library, warning=FALSE}
+library(NLP)
+library(tm)
+library(stats)
+library(proxy)
+library(dplyr)
+library(readtext)
+library(jiebaRD)
+library(jiebaR)
+library(slam)
+library(Matrix)
+library(tidytext)
+library(rvest)
+
+```
+```{r gatdata}
+raw <- read_html("https://www.metacritic.com/game/playstation-4/undertale/critic-reviews")
+rawPSC <-html_nodes(raw," .review_body")%>%html_text(raw)
+
+raw <- read_html("https://www.metacritic.com/game/playstation-4/undertale/user-reviews")
+rawPSU <-html_nodes(raw," .review_body")%>%html_text(raw)
+
+
+raw <- read_html("https://www.metacritic.com/game/switch/undertale/critic-reviews")
+rawNSC <-html_nodes(raw," .review_body")%>%html_text(raw)
+
+
+raw <- read_html("https://www.metacritic.com/game/switch/undertale/user-reviews")
+rawNSU <-html_nodes(raw," .review_body")%>%html_text(raw)
+
+raw <- read_html("https://www.metacritic.com/game/pc/undertale/critic-reviews")
+rawPCC <-html_nodes(raw," .review_body")%>%html_text(raw)
+
+
+raw <- read_html("https://www.metacritic.com/game/pc/undertale/user-reviews")
+rawPCU <-html_nodes(raw," .review_body")%>%html_text(raw)
+
+list.rating <- list(rawPSC,rawPSU,rawNSC,rawNSU,rawPCC,rawPCU)
+titles <- c("PS4.critic","PS4.user","NS.critic","NS.user","PC.critic","PC.user")
+docs = Corpus(VectorSource(list.rating))
+
+```
+## Including Plots
+for (j in seq(docs)){
+  for(i in 1:length(keywords$X1)){
+  docs[[j]] <- gsub(keywords$X1[i],keywords$X2[i], docs[[j]])
+  }
+}
+```{r clean, warning=FALSE}
+toSpace <- content_transformer(function(x, pattern) {
+  return (gsub(pattern, " ", x))
+})
+docs <- tm_map(docs, removePunctuation)
+docs <- tm_map(docs, removeNumbers)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords,stopwords::stopwords(language = "en",source = "snowball"))
+docsPTD <- tm_map(docs, PlainTextDocument)
+keywords <- read.csv("keywords.csv")
+str(docs)
+keywords = read.csv("keywords.csv")
+mixseg = worker()
+keys = as.matrix(keywords)
+new_user_word(mixseg, keys)
+
+jieba_tokenizer = function(d){
+  unlist(segment(d[[1]], mixseg))
+}
+seg = lapply(docs, jieba_tokenizer)
+
+```
+
+
+```{r TF}
+freqFrame = as.data.frame(table(unlist(seg)))
+
+d.corpus <- Corpus(VectorSource(seg))
+tdm <- TermDocumentMatrix(d.corpus)
+
+tf <- as.matrix(tdm)
+DF <- tidy(tf)
+DF
+```
+
+
+```{r IDF}
+# tf-idf computation
+N = tdm$ncol
+tf <- apply(tdm, 2, sum)
+idfCal <- function(word_doc)
+{ 
+  log2( N / nnzero(word_doc) ) 
+}
+idf <- apply(tdm, 1, idfCal)
+
+doc.tfidf <- as.matrix(tdm)
+for(x in 1:nrow(tdm))
+{
+  for(y in 1:ncol(tdm))
+  {
+    doc.tfidf[x,y] <- (doc.tfidf[x,y] / tf[y]) * idf[x]
+  }
+}
+
+findZeroId = as.matrix(apply(doc.tfidf, 1, sum))
+tfidfnn = doc.tfidf[-which(findZeroId == 0),]
+write.csv(tfidfnn, "show.csv")
+```

@@ -1,0 +1,61 @@
+---
+title: "Popular PC Game analyze"
+author: "Perilium"
+date: "2018年11月14日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Libraries
+```{R Library}
+library(rvest)
+library(tidytext)
+library(tm)
+library(plotly)
+library(dplyr)
+setwd("C:/Users/perot/Desktop/NTU-CSX4001/Week_6&7&8(Project_1)")
+```
+
+## Get Local data
+
+```{r data}
+rank = read.csv("RATE.csv",stringsAsFactors=FALSE)
+url = read.csv("url.csv",stringsAsFactors=FALSE,header = F)
+rate = read.csv("feature_rate.csv",stringsAsFactors=FALSE,header = T)
+```
+
+## Get feature ranking
+`{r rating,warning=FALSE}
+
+for(i in c(0:19)){
+  raw <- read_html(url$V1[i])
+  fea <- html_nodes(raw,"#BH-slave ul:nth-child(1) li")%>%html_text(raw)
+  per <- html_nodes(raw,".ACG-persent span ")%>%html_text(raw)
+  rate.i = data.frame(fea,per,stringsAsFactors=FALSE)
+  if(i == 1){
+    rate = data.frame(rate.i,stringsAsFactors=FALSE)
+  }
+  else{
+    rate = data.frame(rate,rate.i,stringsAsFactors=FALSE)
+  }
+}
+write.csv(rate,"feature_rate.csv")
+`
+
+```{r placing out,warning=FALSE}
+
+#category
+rank.an = rank
+rank.an = rank.an %>%  
+  group_by(類型) %>%
+  summarise(no_rows = length(類型))
+plot_ly(rank.an, labels = ~類型,values = ~no_rows, type = 'pie') %>%
+  layout(title = '巴哈姆特PC遊戲評分前20類型比例',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+#released date
+plot_ly(rank, x= ~發售日期 ,y= as.factor(~作品名稱), type = 'scatter')
+```
