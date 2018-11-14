@@ -13,8 +13,7 @@ shinyServer(function(input, output) {
     rate
   })
   output$catPlot <- renderPlotly({
-    plot_ly(rank.an, labels = ~Type ,values = ~no_rows, type = 'pie')%>%
-      layout(title = 'Type percentage',
+    plot_ly(rank.an, labels = ~Type ,values = ~no_rows, type = 'pie') %>%layout(title = 'Type percentage',
              xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
              yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
     

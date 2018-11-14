@@ -5,8 +5,8 @@ account: perilium
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 570481
-bundleId: 1701006
+bundleId: 1701563
 url: https://perilium.shinyapps.io/BahamutAnalyze/
-when: 1542216912.84808
+when: 1542239415.93799
 asMultiple: FALSE
 asStatic: FALSE

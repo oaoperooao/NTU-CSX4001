@@ -1,5 +1,6 @@
 library(shiny)
 library(DT)
+library(plotly)
 # Define UI for miles per gallon application
 shinyUI(
   
