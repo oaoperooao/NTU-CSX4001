@@ -1,0 +1,12 @@
+name: BahamutAnalyze
+title: BahamutAnalyze
+username:
+account: perilium
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 570481
+bundleId: 1700816
+url: https://perilium.shinyapps.io/BahamutAnalyze/
+when: 1542211131.24787
+asMultiple: FALSE
+asStatic: FALSE

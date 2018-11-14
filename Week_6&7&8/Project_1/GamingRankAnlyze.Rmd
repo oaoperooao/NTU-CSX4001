@@ -1,0 +1,117 @@
+---
+title: "Popular PC Game analyze"
+author: "Perilium"
+date: "2018年11月14日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Libraries
+```{R Library,warning=FALSE}
+library(rvest)
+library(plotly)
+library(dplyr)
+library(knitr)
+setwd("C:/Users/perot/Desktop/NTU-CSX4001/Week_6&7&8(Project_1)/Project_1")
+```
+
+### Get Local data
+
+```{r data,warning=FALSE}
+rank = read.csv("RATE.csv",stringsAsFactors=FALSE)
+rank$rankpoint = 21-rank$Rank
+url = read.csv("url.csv",stringsAsFactors=FALSE,header = F)
+rate = read.csv("feature_rate.csv",stringsAsFactors=FALSE,header = T)
+```
+
+### Get feature ranking
+
+
+    for(i in c(0:19)){
+  
+      raw <- read_html(url$V1[i])
+    
+      fea <- html_nodes(raw,"#BH-slave ul:nth-child(1) li")%>%html_text(raw)
+    
+      per <- html_nodes(raw,".ACG-persent span ")%>%html_text(raw)
+    
+      rate.i = data.frame(fea,per,stringsAsFactors=FALSE)
+    
+      if(i == 1){
+    
+         rate = data.frame(rate.i,stringsAsFactors=FALSE)
+      }
+    
+      else{
+    
+       rate = data.frame(rate,rate.i,stringsAsFactors=FALSE)
+     }
+
+    }
+
+    write.csv(rate,"feature_rate.csv")
+    rank = read.csv("RATE.csv",stringsAsFactors=FALSE)
+    write.csv(rank,"RATE.csv")
+   
+
+
+
+##數據呈現
+
+```{r warning=FALSE}
+kable(rank)
+```
+
+##遊戲的類別分布
+
+```{r placing out,warning=FALSE}
+#category
+rank.an = rank
+rank.an = rank.an %>%  
+  group_by(Type) %>%
+  summarise(no_rows = length(Type))
+plot_ly(rank.an, labels = ~Type,values = ~no_rows, type = 'pie') %>%
+  layout(title = '巴哈姆特PC遊戲評分前20類型比例',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+```
+
+##好遊戲不受時間影響，仍然屹立不搖
+
+```{r}
+#released date
+plot_ly(rank, x= ~Date ,y= ~rankpoint, type = 'scatter',mode="markers",text = ~paste('遊戲名稱: ', Name))
+
+```
+
+##玩家注重的東西
+
+```{r tags}
+  cou = c()
+  for(i in c(1:20)){
+    for(j in rate[[2*i-1]]){
+      cou = c(cou,j)
+    }
+  }
+
+cou= as.factor(cou)
+
+cou = data.frame(cou,c(1:100))
+
+plot_ly(cou ,x= ~cou ,type = 'histogram')
+```
+```{r}
+cu = cou %>%  
+  group_by(cou) %>%
+  summarise(freq = length(cou))
+cu = arrange(cu, desc(freq))
+plot_ly(cu, labels = ~cou,values = ~freq, type = 'pie') %>%
+  layout(title = '巴哈姆特PC遊戲評分前20遊戲特色比例',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+```
+
