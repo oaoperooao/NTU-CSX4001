@@ -1,6 +1,7 @@
 library(shiny)
 library(DT)
 library(plotly)
+ran = read.csv("RATE.csv",stringsAsFactors=FALSE)
 # Define UI for miles per gallon application
 shinyUI(
   
@@ -31,7 +32,18 @@ shinyUI(
           
       ),
   
-   
+      tabPanel("特色分析",
+               pageWithSidebar(
+                 headerPanel('各遊戲特色分析'),
+                 sidebarPanel(
+                   selectInput('GN', 'Name:', ran$Name)
+                   ),
+                 mainPanel(
+                   textOutput("radex"),
+                   plotlyOutput("radarPlot")
+                )
+               )
+          ), 
    
    
        tabPanel("資料表",
@@ -41,5 +53,5 @@ shinyUI(
                 )
        )
                 
-       )
   )
+)
