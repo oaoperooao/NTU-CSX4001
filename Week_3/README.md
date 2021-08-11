@@ -5,7 +5,7 @@
 - Visualize_Basicfunc_ggplots.R
 
 ## 習題||hw_3
-- CSV類資料:以googleplaystore資料為例||CSV file:googleplaystore ([連結||Link](https://perilium.github.io/NTU-CSX4001/Week_3/hw_3/Googleplay/VisualizeData_GooglePlaystore.html))
+- CSV類資料:以googleplaystore資料為例||CSV file:googleplaystore ([連結||Link](https://oaoperooao.github.io/NTU-CSX4001/Week_3/hw_3/Googleplay/VisualizeData_GooglePlaystore.html))
 	- googleplaystore.csv
 	- VisualizeData_GooglePlaystore.R
 	- VisualizeData_GooglePlaystore.Rmd
